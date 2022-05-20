@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-long reverseNumber(long *n){
-    long p = abs(*n);
-    long new_no = 0;
+long long reverseNumber(long long *n){
+    long long p = abs(*n);
+    long long new_no = 0;
     while (p > 0){
-        new_no = (10*new_no) + (p%10);
+        new_no = (long long)(10*new_no) + (long long)(p%10);
         p /= 10;
     }
     if (*n < 0)
@@ -16,13 +16,13 @@ long reverseNumber(long *n){
         return new_no;
 }
 
-long main(){
-    long *p;
+int main(){
+    long long *p;
     p = NULL;
-    long number;p = &number;
+    long long number;p = &number;
     printf("Enter the number: ");
-    scanf("%ld", p);
-    printf("Original number: %ld\n", *p);
-    printf("Reversed number: %ld\n", reverseNumber(p));
+    scanf("%lld", p);
+    printf("Original number: %lld\n", *p);
+    printf("Reversed number: %lld\n", reverseNumber(p));
     return 0;
 }
