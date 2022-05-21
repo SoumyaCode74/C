@@ -20,6 +20,9 @@ int main(){
     scanf("%d", &breadth);
     printf("Enter the grade of sheet required (1 to 8)\n");
     scanf("%d", &paper_count);
-    printf("The paper size of A%d is: %d mm x %3.3f mm", paper_count, length, paperWidth(paper_count, breadth));
+    if (paper_count < 1 || paper_count > 8)
+        printf("Incorrect paper type. Please try again!\n");
+    else
+        printf("The paper size of A%d is: %d mm x %3.3f mm", paper_count, length, paperWidth(paper_count, breadth));
     return 0;
 }
